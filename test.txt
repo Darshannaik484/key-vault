@@ -1,0 +1,13 @@
+RSA
+const res = rsaencrypt("HEllo");
+console.log("Encrypted:", res);
+
+const re = rsadecrypt("3000, 28, 745, 745, 218");
+console.log("Decrypted:", re);
+
+
+TrippleDES
+const res = tripleDESEncrypt("hello", "2", "AudioWorkletNode", "3");
+console.log(res);
+const re = tripleDESDecrypt("hello", "2", "AudioWorkletNode", "3");
+console.log(re);

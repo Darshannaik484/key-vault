@@ -1,8 +1,9 @@
 {
-  "name": "key-vault",
-  "version": "1.0.0",
-  "description": "npm module for encryption and decryption",
+  "name": "project-key-vault",
+  "version": "1.0.3",
+  "description": "npm module for trippleDES,RSA encryption and decryption",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
