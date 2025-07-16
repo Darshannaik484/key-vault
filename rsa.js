@@ -31,21 +31,20 @@ function modInverse(a, m) {
   return x1;
 }
 
-function rsaencrypt(message) {
+const rsaencrypt = (message) => {
   const messageCode = message.split("").map((char) => char.charCodeAt(0));
   const encrypted = messageCode.map((m) => modExp(m, e, n));
-  console.log(encrypted);
   return encrypted;
-}
+};
 
-function rsadecrypt(encrypted) {
+const rsadecrypt = (encrypted) => {
   const encryptedArray = encrypted.split(",").map(Number);
   const decrypted = encryptedArray.map((c) => modExp(c, d, n));
   const decryptedMessage = decrypted
     .map((code) => String.fromCharCode(code))
     .join("");
   return decryptedMessage;
-}
+};
 
 function modExp(base, exp, mod) {
   let result = 1;
@@ -61,9 +60,8 @@ function modExp(base, exp, mod) {
 }
 
 export { rsadecrypt, rsaencrypt };
-
-const res = rsaencrypt("HEllo");
+const res = rsaencrypt("darshan");
 console.log("Encrypted:", res);
-
-const re = rsadecrypt("3000, 28, 745, 745, 218");
-console.log("Decrypted:", re);
+// const res1 = rsadecrypt("3000, 28, 745, 745, 2185 ");
+const res1 = rsadecrypt("3000,23,65,32,13");
+console.log("decryped:", res1);

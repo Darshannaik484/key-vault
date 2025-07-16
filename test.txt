@@ -11,3 +11,101 @@ const res = tripleDESEncrypt("hello", "2", "AudioWorkletNode", "3");
 console.log(res);
 const re = tripleDESDecrypt("hello", "2", "AudioWorkletNode", "3");
 console.log(re);
+
+
+Ceasercipher
+console.log(encrypt("HEllo world"));
+console.log(decrypt(encrypt("HEllo world")));
+
+
+
+
+
+
+
+
+//Ceasercipher
+  function encrypt(text){
+    let output="";
+
+    for(let i=0;i<text.length;i++){
+      let char=text[i];
+
+      if(char >="A"  && char<="Z"){
+        let code=char.charCodeAt(0)-65;
+        let shifted =(code+key)%26;
+        output+=String.fromCharCode(shifted+65);
+      }else if(char>="a" && char<="z"){
+        let code=char.charCodeAt(0)-97;
+        let shifted=(code+key)%26;
+        output+=String.fromCharCode(shifted+97);
+      }else{
+        output +=char;
+      }
+    }
+    return output;
+  }
+
+
+  function decrypt(text) {
+    let output = "";
+
+    for (let i = 0; i < text.length; i++) {
+      let char = text[i];
+
+      if (char >= "A" && char <= "Z") {
+        let code = char.charCodeAt(0) - 65;
+        let shifted = (code - key+26) % 26;
+        output += String.fromCharCode(shifted + 65);
+      } else if (char >= "a" && char <= "z") {
+        let code = char.charCodeAt(0) - 97;
+        let shifted = (code -key+26) % 26;
+        output += String.fromCharCode(shifted + 97);
+      } else {
+        output += char;
+      }
+    }
+    return output;
+  }
+
+
+unction XorCipher() {
+  const [inputText, setInputText] = useState("");
+  const [key, setKey] = useState("");
+  const [result, setResult] = useState("");
+
+  function xorCipher(text, key) {
+    let output = "";
+    for (let i = 0; i < text.length; i++) {
+      const charCode = text.charCodeAt(i);
+      const keyCharCode = key.charCodeAt(i % key.length);
+      const xorCode = charCode ^ keyCharCode;
+      output += String.fromCharCode(xorCode);
+    }
+    return output;
+  }
+
+
+//Xor cipher
+  function toHex(str) {
+    return Array.from(str)
+      .map((c) => c.charCodeAt(0).toString(16).padStart(2, "0"))
+      .join(" ");
+  }
+
+  function fromHex(hexStr) {
+    return hexStr
+      .split(" ")
+      .map((h) => String.fromCharCode(parseInt(h, 16)))
+      .join("");
+  }
+
+  const handleEncrypt = () => {
+    const encrypted = xorCipher(inputText, key);
+    setResult(toHex(encrypted)); 
+  };
+
+  const handleDecrypt = () => {
+    const decrypted = xorCipher(fromHex(inputText), key);
+    setResult(decrypted);
+  };
