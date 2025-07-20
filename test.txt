@@ -1,7 +1,6 @@
 RSA
 const res = rsaencrypt("HEllo");
 console.log("Encrypted:", res);
-
 const re = rsadecrypt("3000, 28, 745, 745, 218");
 console.log("Decrypted:", re);
 
@@ -18,6 +17,17 @@ console.log(encrypt("HEllo world"));
 console.log(decrypt(encrypt("HEllo world")));
 
 
+aes256
+const res = aes256Encrypt("Hello", "5");
+console.log("Encrypted message is ", res);
+const re = aes256Decrypt(res, "5");
+console.log("decrypted message is ", re);
+
+
+xor
+XorEncrypt("Hello", "5");
+
+XorDecrypt("7d 50 59 59 5a", "5");
 
 
 

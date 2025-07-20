@@ -1,6 +1,6 @@
 const key = 3;
 
-function encrypt(text) {
+function caesarencrypt(text) {
   let output = "";
 
   for (let i = 0; i < text.length; i++) {
@@ -21,7 +21,7 @@ function encrypt(text) {
   return output;
 }
 
-function decrypt(text) {
+function caesardecrypt(text) {
   let output = "";
 
   for (let i = 0; i < text.length; i++) {
@@ -42,3 +42,6 @@ function decrypt(text) {
 
   return output;
 }
+
+console.log(caesarencrypt("HEllo world"));
+console.log(caesardecrypt(caesarencrypt("HEllo world")));

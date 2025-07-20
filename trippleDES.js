@@ -50,4 +50,8 @@ function tripleDESDecrypt(text, key1, key2, key3) {
   return unpad(decrypted);
 }
 
-export { tripleDESDecrypt, tripleDESEncrypt };
+// export { tripleDESDecrypt, tripleDESEncrypt };
+const res = tripleDESEncrypt("hello", "2", "AudioWorkletNode", "3");
+console.log(res);
+const re = tripleDESDecrypt("hello", "2", "AudioWorkletNode", "3");
+console.log(re);
