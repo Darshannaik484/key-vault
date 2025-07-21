@@ -17,3 +17,5 @@ import AES256 from "./aes256.js";
 import RSA from "./rsa.js";
 import TrippleDES from "./trippleDES.js";
 import XOR from "./xor.js";
+
+export default { CaeserCipher, AES256, RSA, TrippleDES, XOR };
