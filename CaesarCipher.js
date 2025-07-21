@@ -45,11 +45,12 @@ class CaeserCipher {
     return output;
   }
 }
+export default CaeserCipher;
 
 // console.log(caesarencrypt("HEllo world"));
 // console.log(caesardecrypt(caesarencrypt("HEllo world")));
-const obj = new CaeserCipher();
-const encrypted = obj.caesarencrypt("Hello World");
-const decrypted = obj.caesardecrypt(encrypted);
-console.log("Encrypted message is ", encrypted);
-console.log("Decrypted message is ", decrypted);
+// const obj = new CaeserCipher();
+// const encrypted = obj.caesarencrypt("Hello World");
+// const decrypted = obj.caesardecrypt(encrypted);
+// console.log("Encrypted message is ", encrypted);
+// console.log("Decrypted message is ", decrypted);

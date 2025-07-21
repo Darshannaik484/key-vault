@@ -55,9 +55,10 @@ class RSA {
     return decryptedMessage;
   };
 }
+export default RSA;
 
-const obj = new RSA();
-const res = obj.rsaencrypt("darshan");
-console.log("Encrypted:", res);
-const res2 = obj.rsadecrypt(res);
-console.log("Decrypted:", res2);
+// const obj = new RSA();
+// const res = obj.rsaencrypt("darshan");
+// console.log("Encrypted:", res);
+// const res2 = obj.rsadecrypt(res);
+// console.log("Decrypted:", res2);

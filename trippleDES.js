@@ -1,4 +1,4 @@
-class tripplrdes {
+class TrippleDES {
   pad(text) {
     const padLength = 8 - (text.length % 8);
     return text + "~".repeat(padLength === 8 ? 0 : padLength);
@@ -26,7 +26,7 @@ class tripplrdes {
     return result;
   }
 
-  tripleDESEncrypt(text, key1, key2, key3) {
+  tripledesencrypt(text, key1, key2, key3) {
     const padded = this.pad(text);
     let encrypted = "";
     for (let i = 0; i < padded.length; i += 8) {
@@ -39,7 +39,7 @@ class tripplrdes {
     return encrypted;
   }
 
-  tripleDESDecrypt(text, key1, key2, key3) {
+  tripledesdecrypt(text, key1, key2, key3) {
     let decrypted = "";
     for (let i = 0; i < text.length; i += 8) {
       let block = text.slice(i, i + 8);
@@ -51,13 +51,14 @@ class tripplrdes {
     return this.unpad(decrypted);
   }
 }
+export default TrippleDES;
 // export { tripleDESDecrypt, tripleDESEncrypt };
 // const res = tripleDESEncrypt("hello", "2", "AudioWorkletNode", "3");
 // console.log(res);
 // const re = tripleDESDecrypt("hello", "2", "AudioWorkletNode", "3");
 // console.log(re);
-const obj = new tripplrdes();
-const res = obj.tripleDESEncrypt("hello", "2", "AudioWorkletNode", "3");
-console.log("Encrypted:", res);
-const re = obj.tripleDESDecrypt("hello", "2", "AudioWorkletNode", "3");
-console.log("Decrypted:", re);
+// const obj = new tripplrdes();
+// const res = obj.tripleDESEncrypt("hello", "2", "AudioWorkletNode", "3");
+// console.log("Encrypted:", res);
+// const re = obj.tripleDESDecrypt("hello", "2", "AudioWorkletNode", "3");
+// console.log("Decrypted:", re);
