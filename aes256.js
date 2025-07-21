@@ -29,7 +29,7 @@ class AES256 {
     return result;
   }
 }
-export default AES256;
+module.exports = AES256;
 // const res = aes256Encrypt("Hello", "5");
 // console.log("Encrypted message is ", res);
 // const re = aes256Decrypt(res, "5");

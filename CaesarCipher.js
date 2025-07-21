@@ -45,7 +45,7 @@ class CaeserCipher {
     return output;
   }
 }
-export default CaeserCipher;
+module.exports = CaeserCipher;
 
 // console.log(caesarencrypt("HEllo world"));
 // console.log(caesardecrypt(caesarencrypt("HEllo world")));

@@ -33,7 +33,7 @@ class XOR {
     console.log(decrypted);
   };
 }
-export default XOR;
+module.exports = XOR;
 // // XorEncrypt("Hello", "5");
 // // XorDecrypt("7d 50 59 59 5a", "5");
 // const obj = new xor();

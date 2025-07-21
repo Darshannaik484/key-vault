@@ -51,7 +51,7 @@ class TrippleDES {
     return this.unpad(decrypted);
   }
 }
-export default TrippleDES;
+module.exports = TrippleDES;
 // export { tripleDESDecrypt, tripleDESEncrypt };
 // const res = tripleDESEncrypt("hello", "2", "AudioWorkletNode", "3");
 // console.log(res);

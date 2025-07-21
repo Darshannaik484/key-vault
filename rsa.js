@@ -55,7 +55,7 @@ class RSA {
     return decryptedMessage;
   };
 }
-export default RSA;
+module.exports = RSA;
 
 // const obj = new RSA();
 // const res = obj.rsaencrypt("darshan");
