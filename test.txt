@@ -1,121 +1,26 @@
-RSA
-const res = rsaencrypt("HEllo");
-console.log("Encrypted:", res);
-const re = rsadecrypt("3000, 28, 745, 745, 218");
-console.log("Decrypted:", re);
+// const obj = new xor();
+// const res = obj.xorCipher("Hello", "5");
+// console.log("Encrypted:", res);
+// const res2 = obj.xorCipher(res, "5");
+// console.log("Decrypted:", res2);
 
 
-TrippleDES
-const res = tripleDESEncrypt("hello", "2", "AudioWorkletNode", "3");
-console.log(res);
-const re = tripleDESDecrypt("hello", "2", "AudioWorkletNode", "3");
-console.log(re);
+// // const obj = new tripplrdes();
+// // const res = obj.tripleDESEncrypt("hello", "2", "AudioWorkletNode", "3");
+// // console.log("Encrypted:", res);
+// // const re = obj.tripleDESDecrypt("hello", "2", "AudioWorkletNode", "3");
+// // console.log("Decrypted:", re);
 
 
-Ceasercipher
-console.log(encrypt("HEllo world"));
-console.log(decrypt(encrypt("HEllo world")));
+/ const obj = new RSA();
+// const res = obj.rsaencrypt("darshan");
+// console.log("Encrypted:", res);
+// const res2 = obj.rsadecrypt(res);
+// console.log("Decrypted:", res2);
 
 
-aes256
-const res = aes256Encrypt("Hello", "5");
-console.log("Encrypted message is ", res);
-const re = aes256Decrypt(res, "5");
-console.log("decrypted message is ", re);
-
-
-xor
-XorEncrypt("Hello", "5");
-
-XorDecrypt("7d 50 59 59 5a", "5");
-
-
-
-
-
-
-//Ceasercipher
-  function encrypt(text){
-    let output="";
-
-    for(let i=0;i<text.length;i++){
-      let char=text[i];
-
-      if(char >="A"  && char<="Z"){
-        let code=char.charCodeAt(0)-65;
-        let shifted =(code+key)%26;
-        output+=String.fromCharCode(shifted+65);
-      }else if(char>="a" && char<="z"){
-        let code=char.charCodeAt(0)-97;
-        let shifted=(code+key)%26;
-        output+=String.fromCharCode(shifted+97);
-      }else{
-        output +=char;
-      }
-    }
-    return output;
-  }
-
-
-  function decrypt(text) {
-    let output = "";
-
-    for (let i = 0; i < text.length; i++) {
-      let char = text[i];
-
-      if (char >= "A" && char <= "Z") {
-        let code = char.charCodeAt(0) - 65;
-        let shifted = (code - key+26) % 26;
-        output += String.fromCharCode(shifted + 65);
-      } else if (char >= "a" && char <= "z") {
-        let code = char.charCodeAt(0) - 97;
-        let shifted = (code -key+26) % 26;
-        output += String.fromCharCode(shifted + 97);
-      } else {
-        output += char;
-      }
-    }
-    return output;
-  }
-
-
-unction XorCipher() {
-  const [inputText, setInputText] = useState("");
-  const [key, setKey] = useState("");
-  const [result, setResult] = useState("");
-
-  function xorCipher(text, key) {
-    let output = "";
-    for (let i = 0; i < text.length; i++) {
-      const charCode = text.charCodeAt(i);
-      const keyCharCode = key.charCodeAt(i % key.length);
-      const xorCode = charCode ^ keyCharCode;
-      output += String.fromCharCode(xorCode);
-    }
-    return output;
-  }
-
-
-//Xor cipher
-  function toHex(str) {
-    return Array.from(str)
-      .map((c) => c.charCodeAt(0).toString(16).padStart(2, "0"))
-      .join(" ");
-  }
-
-  function fromHex(hexStr) {
-    return hexStr
-      .split(" ")
-      .map((h) => String.fromCharCode(parseInt(h, 16)))
-      .join("");
-  }
-
-  const handleEncrypt = () => {
-    const encrypted = xorCipher(inputText, key);
-    setResult(toHex(encrypted)); 
-  };
-
-  const handleDecrypt = () => {
-    const decrypted = xorCipher(fromHex(inputText), key);
-    setResult(decrypted);
-  };
+// // // const obj = new aes256();
+// // // const a = obj.aes256Encrypt("Hello", "5");
+// // // const b = obj.aes256Decrypt("1c1d1e1f", "5");
+// // // console.log("Encrypted message is ", a);
+// // // console.log("Decrypted message is ", b);
