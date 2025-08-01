@@ -41,18 +41,19 @@ class RSA {
     return result;
   }
 
-  rsaencrypt = (message) => {
+  rsaencrypt(message) {
     const messageCode = message.split("").map((char) => char.charCodeAt(0));
     const encrypted = messageCode.map((m) => this.modExp(m, this.e, this.n));
-    return encrypted;
-  };
+    return encrypted.join(",");
+  }
 
-  rsadecrypt = (encryptedArray) => {
+  rsadecrypt(encryptedString) {
+    const encryptedArray = encryptedString.split(",").map(Number);
     const decrypted = encryptedArray.map((c) => this.modExp(c, this.d, this.n));
     const decryptedMessage = decrypted
       .map((code) => String.fromCharCode(code))
       .join("");
     return decryptedMessage;
-  };
+  }
 }
 export { RSA };

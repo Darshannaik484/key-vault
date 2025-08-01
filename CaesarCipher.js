@@ -46,5 +46,16 @@ class CaesarCipher {
 
     return output;
   }
+
+  // Add methods that match the App.js calls
+  caesarencrypt(text, shift = 3) {
+    this.key = shift;
+    return this.encrypt(text);
+  }
+
+  caesardecrypt(text, shift = 3) {
+    this.key = shift;
+    return this.decrypt(text);
+  }
 }
 export { CaesarCipher };

@@ -50,5 +50,28 @@ class TrippleDES {
     }
     return this.unpad(decrypted);
   }
+
+  // Add methods that match the App.js calls
+  tripleDESEncrypt(text, key) {
+    // Split the key into 3 parts for Triple DES
+    const key1 = key.slice(0, Math.ceil(key.length / 3));
+    const key2 = key.slice(
+      Math.ceil(key.length / 3),
+      Math.ceil((2 * key.length) / 3)
+    );
+    const key3 = key.slice(Math.ceil((2 * key.length) / 3));
+    return this.tripledesencrypt(text, key1, key2, key3);
+  }
+
+  tripleDESDecrypt(text, key) {
+    // Split the key into 3 parts for Triple DES
+    const key1 = key.slice(0, Math.ceil(key.length / 3));
+    const key2 = key.slice(
+      Math.ceil(key.length / 3),
+      Math.ceil((2 * key.length) / 3)
+    );
+    const key3 = key.slice(Math.ceil((2 * key.length) / 3));
+    return this.tripledesdecrypt(text, key1, key2, key3);
+  }
 }
 export { TrippleDES };

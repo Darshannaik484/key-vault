@@ -1,5 +1,5 @@
 class AES256 {
-  aes256encrypt(text, key) {
+  aes256Encrypt(text, key) {
     if (!key || key.length < 1) {
       throw new Error("Encryption key is required");
     }
@@ -14,7 +14,7 @@ class AES256 {
     return result;
   }
 
-  aes256decrypt(encryptedHex, key) {
+  aes256Decrypt(encryptedHex, key) {
     if (!key || key.length < 1) {
       throw new Error("Decryption key is required");
     }

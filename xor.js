@@ -1,5 +1,9 @@
 class XOR {
   xorCipher(text, key) {
+    if (!key || key.length === 0) {
+      throw new Error("Key must not be empty");
+    }
+
     let output = "";
     for (let i = 0; i < text.length; i++) {
       const charCode = text.charCodeAt(i);
@@ -23,14 +27,15 @@ class XOR {
       .join("");
   }
 
-  Xorencrypt = (inputText, key) => {
+  XorEncrypt(inputText, key) {
     const encrypted = this.xorCipher(inputText, key);
-    console.log(toHex(encrypted));
-  };
+    return this.toHex(encrypted);
+  }
 
-  Xordecrypt = (inputText, key) => {
-    const decrypted = this.xorCipher(fromHex(inputText), key);
-    console.log(decrypted);
-  };
+  XorDecrypt(inputText, key) {
+    const decrypted = this.xorCipher(this.fromHex(inputText), key);
+    return decrypted;
+  }
 }
+
 export { XOR };
