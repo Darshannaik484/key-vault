@@ -8,7 +8,7 @@ A lightweight and modular JavaScript library that provides popular encryption, d
 - Triple DES
 - SHA-256 Hashing
 
-> Built and maintained by Darsh H D for secure web applications and educational purposes.
+> Built and maintained for secure web applications and educational purposes.
 
 ---
 
